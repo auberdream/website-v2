@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+import sys
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -27,10 +28,14 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+APP_PATH = os.path.join(BASE_DIR, 'apps')
+
+sys.path.insert(0, os.path.join(APP_PATH))
 
 # Application definition
 
 INSTALLED_APPS = [
+    'home',
     'wagtail.wagtailforms',
     'wagtail.wagtailredirects',
     'wagtail.wagtailembeds',
