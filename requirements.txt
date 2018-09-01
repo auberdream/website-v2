@@ -1,0 +1,10 @@
+dj-database-url
+Django==1.11.*
+djangorestframework==3.7
+django-debug-toolbar
+django-redis
+django-storages
+gunicorn
+psycopg2
+wagtail==1.13.*
+whitenoise
