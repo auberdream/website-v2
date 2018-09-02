@@ -36,6 +36,7 @@ sys.path.insert(0, os.path.join(APP_PATH))
 
 INSTALLED_APPS = [
     'home',
+    'rest_framework',
     'wagtail.wagtailforms',
     'wagtail.wagtailredirects',
     'wagtail.wagtailembeds',
