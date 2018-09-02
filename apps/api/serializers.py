@@ -1,3 +1,4 @@
+import copy
 from rest_framework import serializers
 from wagtail.wagtailcore.templatetags.wagtailcore_tags import RichText
 from wagtail.wagtailimages.models import Image
