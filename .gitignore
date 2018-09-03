@@ -19,6 +19,7 @@ package-lock.json
 *.pyc
 /init_project.sh
 db.sqlite3
+/elliewem2/static/
 
 npm-debug.log*
 yarn-debug.log*
