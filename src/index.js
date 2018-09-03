@@ -3,13 +3,13 @@ import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 import axios from "axios";
 
-import App from "./App";
+import Router from "./utils/Router";
 
 axios.defaults.baseURL = "/api/";
 
 ReactDOM.render(
   <BrowserRouter>
-    <App />
+    <Router />
   </BrowserRouter>,
   document.getElementById("root")
 );

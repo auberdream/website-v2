@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
 import axios from "axios";
 
-import Home from "./Home";
+import Home from "../pages/Home";
 
-class App extends Component {
+class Router extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -25,16 +25,13 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        {console.log(this.state.siteData)}
-        <div>
-          <Switch>
-            <Route exact path="/" component={Home} />
-          </Switch>
-        </div>
+      <div className="router">
+        <Switch>
+          <Route exact path="/" component={Home} />
+        </Switch>
       </div>
     );
   }
 }
 
-export default App;
+export default Router;
