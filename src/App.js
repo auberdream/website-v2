@@ -1,5 +1,8 @@
 import React, { Component } from "react";
+import { Switch, Route } from "react-router-dom";
 import axios from "axios";
+
+import Home from "./Home";
 
 class App extends Component {
   constructor(props) {
@@ -11,7 +14,7 @@ class App extends Component {
 
   componentDidMount() {
     axios
-      .get("/api/site/")
+      .get("site/")
       .then(response => {
         this.setState({ siteData: response.data });
       })
@@ -23,7 +26,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <p>{this.state.siteData}</p>
+        {console.log(this.state.siteData)}
+        <div>
+          <Switch>
+            <Route exact path="/" component={Home} />
+          </Switch>
+        </div>
       </div>
     );
   }

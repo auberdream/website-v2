@@ -1,8 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import registerServiceWorker from "./registerServiceWorker";
+import { BrowserRouter } from "react-router-dom";
+import axios from "axios";
 
 import App from "./App";
 
-ReactDOM.render(<App />, document.getElementById("root"));
-registerServiceWorker();
+axios.defaults.baseURL = "/api/";
+
+ReactDOM.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  document.getElementById("root")
+);
