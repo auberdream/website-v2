@@ -1,8 +1,12 @@
-import React, { Component } from "react";
-import { Switch, Route } from "react-router-dom";
 import axios from "axios";
+import React, { Component } from "react";
+import { withRouter, Switch, Route } from "react-router-dom";
+import { Transition, TransitionGroup } from "react-transition-group";
 
-import Home from "../pages/Home";
+import AboutPage from "../pages/AboutPage";
+import ContactPage from "../pages/ContactPage";
+import HomePage from "../pages/HomePage";
+import ProjectsPage from "../pages/ProjectsPage";
 
 class Router extends Component {
   constructor(props) {
@@ -24,14 +28,55 @@ class Router extends Component {
   }
 
   render() {
+    const { location } = this.props;
+    const dataLoaded = this.state.siteData !== null;
+
     return (
       <div className="router">
-        <Switch>
-          <Route exact path="/" component={Home} />
-        </Switch>
+        {dataLoaded && (
+          <TransitionGroup className="transition-wrapper">
+            <Transition
+              key={location.pathname}
+              timeout={500}
+              classNames="transition"
+            >
+              {transitionState => {
+                return (
+                  <Switch>
+                    <Route
+                      exact
+                      path="/"
+                      render={() => (
+                        <HomePage transitionState={transitionState} />
+                      )}
+                    />
+                    <Route
+                      path="/about"
+                      render={() => (
+                        <AboutPage transitionState={transitionState} />
+                      )}
+                    />
+                    <Route
+                      path="/projects"
+                      render={() => (
+                        <ProjectsPage transitionState={transitionState} />
+                      )}
+                    />
+                    <Route
+                      path="/contact"
+                      render={() => (
+                        <ContactPage transitionState={transitionState} />
+                      )}
+                    />
+                  </Switch>
+                );
+              }}
+            </Transition>
+          </TransitionGroup>
+        )}
       </div>
     );
   }
 }
 
-export default Router;
+export default withRouter(Router);
