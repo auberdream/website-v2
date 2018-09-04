@@ -3,8 +3,12 @@ import React, { Component } from "react";
 class AnimatedHeader extends Component {
   splitChars() {
     const { heading } = this.props;
-    const split = heading.split(" ").map(word => {
-      return <h1 class="animated-header__text">{word.toUpperCase()}</h1>;
+    const split = heading.split(" ").map((word, index) => {
+      return (
+        <h1 key={index} className="animated-header__text">
+          {word.toUpperCase()}
+        </h1>
+      );
     });
     return split;
   }

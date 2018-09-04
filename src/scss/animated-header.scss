@@ -1,0 +1,19 @@
+.animated-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.animated-header__text {
+  font-family: "Elsie", sans-serif;
+  font-size: 76px;
+  letter-spacing: 5px;
+}
+
+.animated-header__text:last-of-type {
+  padding-left: 14px;
+  letter-spacing: 13px;
+  font-size: 80px;
+  border-top: 1.5px solid black;
+}
