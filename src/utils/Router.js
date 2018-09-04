@@ -47,7 +47,10 @@ class Router extends Component {
                       exact
                       path="/"
                       render={() => (
-                        <HomePage transitionState={transitionState} />
+                        <HomePage
+                          transitionState={transitionState}
+                          pageData={this.state.siteData.home_page}
+                        />
                       )}
                     />
                     <Route
