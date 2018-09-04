@@ -1,0 +1,13 @@
+html,
+body,
+#root,
+.router,
+.transition-wrapper {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+body {
+  background-color: #f2ede6;
+}
