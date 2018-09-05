@@ -10,16 +10,12 @@
   fill: none;
 }
 
-.cls-1,
-.cls-2,
-.cls-3 {
-  stroke: #c6435b;
-  stroke-miterlimit: 10;
-  stroke-width: 3px;
+.cls-1 {
+  stroke: red;
+  stroke-width: 1px;
 }
-.cls-2 {
-  fill: none;
-}
-.cls-3 {
-  fill: #fff;
+
+#triangle {
+  stroke: black;
+  stroke-width: 2px;
 }
