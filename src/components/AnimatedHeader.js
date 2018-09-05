@@ -4,11 +4,24 @@ import { TimelineLite } from "gsap/all";
 class AnimatedHeader extends Component {
   componentDidMount() {
     const timeline0 = new TimelineLite();
-    timeline0.from(this.refs.container0, 2, { width: 0 });
-    timeline0.from(this.refs.word0, 2.5, { opacity: 0, top: "100px" });
+    timeline0.from(this.refs.word0, 2.5, { opacity: 0, top: "100px" }, 2);
 
     const timeline1 = new TimelineLite();
     timeline1.from(this.refs.word1, 2.5, { opacity: 0, bottom: "100px" }, 2.4);
+  }
+
+  componentDidUpdate() {
+    if (this.props.transitionState === "exiting") {
+      this.removeText();
+    }
+  }
+
+  removeText() {
+    const exitTimeline0 = new TimelineLite();
+    const exitTimeline1 = new TimelineLite();
+
+    exitTimeline0.to(this.refs.word0, 1.5, { opacity: 0, top: "100px" }, 1);
+    exitTimeline1.to(this.refs.word1, 1.5, { opacity: 0, bottom: "100px" }, 1);
   }
 
   splitChars() {

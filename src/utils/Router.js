@@ -34,17 +34,18 @@ class Router extends Component {
 
     return (
       <div className="router">
-        <Cursor />
+        <Cursor inertia={8} position="main" />
+        <Cursor inertia={12} position="sub" />
         {dataLoaded && (
           <TransitionGroup className="transition-wrapper">
             <Transition
               key={location.pathname}
-              timeout={500}
+              timeout={5000}
               classNames="transition"
             >
               {transitionState => {
                 return (
-                  <Switch>
+                  <Switch location={location}>
                     <Route
                       exact
                       path="/"

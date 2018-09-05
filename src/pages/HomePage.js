@@ -14,12 +14,31 @@ class HomePage extends Component {
     timeline.staggerFrom(".button__inner-wrapper", 3, { opacity: 0 }, 0.5, 5);
   }
 
+  componentDidUpdate() {
+    if (this.props.transitionState === "exiting") {
+      this.removeButtons();
+    }
+  }
+
+  removeButtons() {
+    const exitTimeline = new TimelineLite();
+
+    exitTimeline.to(".button__inner-wrapper", 2, { opacity: 0 }, 1);
+  }
+
   render() {
     return (
       <div className="home-page">
-        <HomeBackgroundImage image0={ellie} image1={ellieMirror} />
+        <HomeBackgroundImage
+          transitionState={this.props.transitionState}
+          image0={ellie}
+          image1={ellieMirror}
+        />
         <div className="home-page__right-wrapper">
-          <AnimatedHeader heading={this.props.pageData.heading} />
+          <AnimatedHeader
+            heading={this.props.pageData.heading}
+            transitionState={this.props.transitionState}
+          />
           <div className="button__outer-wrapper">
             <div className="button__inner-wrapper">
               <Button

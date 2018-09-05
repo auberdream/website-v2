@@ -1,9 +1,21 @@
 .cursor {
   position: absolute;
-  height: 12px;
-  width: 12px;
   top: 50%;
   left: 50%;
   border-radius: 70px;
+  z-index: auto;
+}
+
+#main {
   border: 3px solid red;
+  height: 12px;
+  width: 12px;
+}
+
+#sub {
+  margin-left: 4px;
+  margin-top: 4px;
+  background-color: red;
+  height: 3px;
+  width: 3px;
 }

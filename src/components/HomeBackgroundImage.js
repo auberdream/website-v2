@@ -9,6 +9,18 @@ class HomeBackgroundImage extends Component {
     timeline.from(".cls-1", 10, { drawSVG: 0 });
   }
 
+  componentDidUpdate() {
+    if (this.props.transitionState === "exiting") {
+      this.rewindSVG();
+    }
+  }
+
+  rewindSVG() {
+    console.log("here");
+    const exitTimeline = new TimelineLite();
+    exitTimeline.to(".cls-1", 3, { drawSVG: 0 });
+  }
+
   render() {
     return (
       <div className="home-background-image__wrapper">

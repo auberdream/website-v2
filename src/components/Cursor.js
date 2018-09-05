@@ -39,8 +39,8 @@ class Cursor extends Component {
     const hyp = Math.sqrt(dx * dx + dy * dy);
 
     // Update the current values using intertia formula
-    this.xCurrent += (dx - this.xCurrent) / 8;
-    this.yCurrent += (dy - this.yCurrent) / 8;
+    this.xCurrent += (dx - this.xCurrent) / this.props.inertia;
+    this.yCurrent += (dy - this.yCurrent) / this.props.inertia;
 
     // Apply the style
     const style = `translate3D(${this.xCurrent}px, ${this.yCurrent}px, 0)`;
@@ -55,7 +55,9 @@ class Cursor extends Component {
   }
 
   render() {
-    return <div ref="cursor" className="cursor" />;
+    return (
+      <div ref="cursor" className="cursor" id={`${this.props.position}`} />
+    );
   }
 }
 
