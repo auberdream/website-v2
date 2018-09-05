@@ -3,13 +3,14 @@ import React, { Component } from "react";
 import AnimatedHeader from "../components/AnimatedHeader";
 import Button from "../components/Button";
 import HomeBackgroundImage from "../components/HomeBackgroundImage";
-import image from "../../static/images/ellie.svg";
+import ellie from "../../static/images/ellie.svg";
+import ellieMirror from "../../static/images/ellie-mirror.svg";
 
 class HomePage extends Component {
   render() {
     return (
       <div className="home-page">
-        <HomeBackgroundImage image={image} />
+        <HomeBackgroundImage image0={ellie} image1={ellieMirror} />
         <div className="home-page__right-wrapper">
           <AnimatedHeader heading={this.props.pageData.heading} />
           <div className="button__outer-wrapper">

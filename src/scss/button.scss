@@ -15,14 +15,28 @@
 
 .button--solid {
   @include button;
-  background-color: #e56b98;
+  background-color: red;
   color: white;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: transparent;
+    color: red;
+    border: 1.5px solid red;
+  }
 }
 
 .button {
   @include button;
-  border: 1px solid #e56b98;
-  color: #e56b98;
+  border: 1.5px solid red;
+  color: red;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border: 1.5px solid white;
+    background-color: red;
+    color: white;
+  }
 }
 
 .button__outer-wrapper {

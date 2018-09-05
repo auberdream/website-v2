@@ -12,7 +12,8 @@ class HomeBackgroundImage extends Component {
   render() {
     return (
       <div className="home-background-image__wrapper">
-        <InlineSVG src={this.props.image} />
+        <InlineSVG src={this.props.image0} />
+        <InlineSVG src={this.props.image1} />
       </div>
     );
   }
