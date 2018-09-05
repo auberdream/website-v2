@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { TimelineLite } from "gsap/all";
 
 import AnimatedHeader from "../components/AnimatedHeader";
 import Button from "../components/Button";
@@ -7,6 +8,12 @@ import ellie from "../../static/images/ellie.svg";
 import ellieMirror from "../../static/images/ellie-mirror.svg";
 
 class HomePage extends Component {
+  componentDidMount() {
+    const timeline = new TimelineLite();
+
+    timeline.staggerFrom(".button__inner-wrapper", 3, { opacity: 0 }, 0.5, 5);
+  }
+
   render() {
     return (
       <div className="home-page">
