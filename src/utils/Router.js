@@ -40,7 +40,7 @@ class Router extends Component {
           <TransitionGroup className="transition-wrapper">
             <Transition
               key={location.pathname}
-              timeout={5000}
+              timeout={3000}
               classNames="transition"
             >
               {transitionState => {
@@ -57,6 +57,7 @@ class Router extends Component {
                       )}
                     />
                     <Route
+                      exact
                       path="/about"
                       render={() => (
                         <AboutPage transitionState={transitionState} />

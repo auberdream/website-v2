@@ -23,7 +23,7 @@ class HomePage extends Component {
   removeButtons() {
     const exitTimeline = new TimelineLite();
 
-    exitTimeline.to(".button__inner-wrapper", 2, { opacity: 0 }, 1);
+    exitTimeline.to(".button__inner-wrapper", 0.4, { opacity: 0 });
   }
 
   render() {
