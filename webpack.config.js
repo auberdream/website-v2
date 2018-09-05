@@ -71,6 +71,10 @@ let config = {
             options: sourceMapOptions
           }
         ]
+      },
+      {
+        test: /\.svg$/,
+        loader: "svg-inline-loader"
       }
     ]
   },

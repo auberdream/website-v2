@@ -1,0 +1,40 @@
+@mixin button {
+  padding: 5px 10px;
+  margin: 5px 10px;
+  border-radius: 15px;
+  width: 105px;
+  height: 38px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 2px;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+.button--solid {
+  @include button;
+  background-color: #e56b98;
+  color: white;
+}
+
+.button {
+  @include button;
+  border: 1px solid #e56b98;
+  color: #e56b98;
+}
+
+.button__outer-wrapper {
+  margin-top: 30px;
+}
+
+.button__inner-wrapper {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.button__inner-wrapper:last-of-type {
+  justify-content: center;
+}

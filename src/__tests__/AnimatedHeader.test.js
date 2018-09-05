@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Home from "../pages/Home";
+import AnimatedHeader from "../components/AnimatedHeader";
 
 it("renders without crashing", () => {
   const div = document.createElement("div");
-  ReactDOM.render(<Home />, div);
+  ReactDOM.render(<AnimatedHeader />, div);
   ReactDOM.unmountComponentAtNode(div);
 });

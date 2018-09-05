@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css?family=Elsie|Roboto:300,400");
+
+html,
+body,
+#root,
+.router,
+.transition-wrapper {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+body {
+  background-color: #f2ede6;
+  font-family: "Roboto", sans-serif;
+}
+
+h1 {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
