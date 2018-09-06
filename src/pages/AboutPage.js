@@ -8,7 +8,7 @@ class About extends Component {
   render() {
     return (
       <div className="about">
-        <div className="about__header-wrapper">
+        <div ref="aboutHeaderWrapper" className="about__header-wrapper">
           <AnimatedSVGHeader
             transitionState={this.props.transitionState}
             image={AboutText}

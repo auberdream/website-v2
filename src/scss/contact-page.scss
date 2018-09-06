@@ -1,0 +1,21 @@
+.contact {
+  width: 100%;
+}
+
+.cls-static {
+  stroke: red;
+  stroke-width: 1px;
+  fill: $background-color;
+}
+
+.contact__svg-container {
+  width: 50%;
+}
+
+#path-1,
+#path-3,
+#path-5,
+#path-6,
+#path-7 {
+  transition: fill 3s ease;
+}

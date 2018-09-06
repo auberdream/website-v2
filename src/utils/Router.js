@@ -35,12 +35,12 @@ class Router extends Component {
     return (
       <div className="router">
         <Cursor inertia={8} position="main" />
-        <Cursor inertia={12} position="sub" />
+        <Cursor inertia={10} position="sub" />
         {dataLoaded && (
           <TransitionGroup className="transition-wrapper">
             <Transition
               key={location.pathname}
-              timeout={3000}
+              timeout={4000}
               classNames="transition"
             >
               {transitionState => {

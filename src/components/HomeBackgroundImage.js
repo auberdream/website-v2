@@ -16,7 +16,6 @@ class HomeBackgroundImage extends Component {
   }
 
   rewindSVG() {
-    console.log("here");
     const exitTimeline = new TimelineLite();
     exitTimeline.to(".cls-1", 3, { drawSVG: 0 });
   }
