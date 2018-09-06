@@ -18,9 +18,6 @@ class Cursor extends Component {
   componentDidMount() {
     window.addEventListener("mousemove", this.handleMouseMove);
     this.raf = requestAnimationFrame(this.loop);
-    setTimeout(() => {
-      this.handleResize();
-    }, 100);
   }
 
   handleMouseMove(event) {
