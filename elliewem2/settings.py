@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'home',
     'about',
     'contact',
+    'project',
 
     'wagtail.wagtailforms',
     'wagtail.wagtailredirects',

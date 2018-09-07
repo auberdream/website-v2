@@ -9,7 +9,7 @@ from wagtail.wagtailsearch import index
 
 
 class ContactPage(Page):
-    email = models.CharField(max_length=20, default="")
+    email = models.CharField(max_length=40, default="")
 
     content_panels = Page.content_panels + [
         FieldPanel('email', classname="full")

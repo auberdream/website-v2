@@ -6,6 +6,7 @@ from wagtail.wagtailimages.models import Image
 from home.models import HomePage
 from about.models import AboutPage
 from contact.models import ContactPage
+from project.models import ProjectPage
 
 
 class HomePageSerializer(serializers.ModelSerializer):
@@ -18,11 +19,18 @@ class AboutPageSerializer(serializers.ModelSerializer):
         model = AboutPage
         fields = ('__all__')
 
-class ContactPageSerializers(serializers.ModelSerializer):
+class ContactPageSerializer(serializers.ModelSerializer):
     class Meta:
         model = ContactPage
+        fields = ('__all__')
+
+class ProjectPageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ProjectPage
         fields = ('__all__')
 
 class SiteDataSerializer(serializers.Serializer):
     home_page = HomePageSerializer()
     about_page = AboutPageSerializer()
+    contact_page = ContactPageSerializer()
+    project_pages = ProjectPageSerializer(many=True)
