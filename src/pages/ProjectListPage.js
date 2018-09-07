@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { TimelineLite } from "gsap/all";
 
-class ProjectsPage extends Component {
+class ProjectListPage extends Component {
   componentDidMount() {
     const projectsTimeline = new TimelineLite();
     const loadingTimeline = new TimelineLite({
@@ -46,4 +46,4 @@ class ProjectsPage extends Component {
   }
 }
 
-export default ProjectsPage;
+export default ProjectListPage;
