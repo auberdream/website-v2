@@ -26,5 +26,5 @@ urlpatterns = [
     url(r'^pages/', include(wagtail_urls)),
     url(r'^api/', include('api.urls')),
     url(r'^django-admin/', admin.site.urls),
-    url(r'^', TemplateView.as_view(template_name="base.html"), name='base'),
+    url(r'^$', TemplateView.as_view(template_name="base.html"), name='base'),
 ]

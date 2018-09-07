@@ -8,7 +8,7 @@ import os
 import sys
 import urlparse
 
-import dj_database_url
+# import dj_database_url
 
 
 # project
@@ -43,6 +43,7 @@ DATABASES = {
 
 INSTALLED_APPS = [
     'home',
+    'about',
 
     'wagtail.wagtailforms',
     'wagtail.wagtailredirects',
