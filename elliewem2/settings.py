@@ -44,6 +44,7 @@ DATABASES = {
 INSTALLED_APPS = [
     'home',
     'about',
+    'contact',
 
     'wagtail.wagtailforms',
     'wagtail.wagtailredirects',
