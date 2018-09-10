@@ -8,7 +8,7 @@ import os
 import sys
 import urlparse
 
-# import dj_database_url
+import dj_database_url
 
 
 # project
@@ -25,7 +25,7 @@ sys.path.insert(0, os.path.join(APP_PATH))
 
 # Environment
 
-SECRET_KEY = os.environ['SUPER_SECRET_KEY']
+SECRET_KEY = os.environ['SECRET_KEY']
 
 DEBUG = str(os.environ.get('DEBUG', False)).lower() == 'true'
 
@@ -38,6 +38,9 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
 
 # Application definition
 
@@ -141,6 +144,15 @@ else:
     STATIC_HOST = os.environ.get('DJANGO_STATIC_HOST', '')
     STATIC_URL = STATIC_HOST + '/static/'
 
+    AWS_STORAGE_BUCKET_NAME = os.environ['AWS_STORAGE_BUCKET_NAME']
+    AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
+    AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
+    S3_URL = 'https://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
+    MEDIA_URL = S3_URL + 'media/'
+    AWS_S3_SECURE_URLS = True
+    AWS_QUERYSTRING_AUTH = False
+    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+
 
 # Django Debug Toolbar
 
@@ -188,7 +200,8 @@ REDIS_URL = os.environ.get('REDIS_URL')
 
 if REDIS_URL:
     parsed_redis_url = urlparse.urlparse(REDIS_URL)
-    max_redis_cache_connections = int(os.getenv('REDIS_CACHE_MAX_CONNECTIONS', '20'))
+    max_redis_cache_connections = int(
+        os.getenv('REDIS_CACHE_MAX_CONNECTIONS', '20'))
 
     CACHES = {
         'default': {
