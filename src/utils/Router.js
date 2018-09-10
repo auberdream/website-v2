@@ -7,6 +7,7 @@ import AboutPage from "../pages/AboutPage";
 import ContactPage from "../pages/ContactPage";
 import Cursor from "../components/Cursor";
 import HomePage from "../pages/HomePage";
+import ProjectListPage from "../pages/ProjectListPage";
 
 class Router extends Component {
   constructor(props) {
@@ -65,7 +66,7 @@ class Router extends Component {
                     <Route
                       path="/projects"
                       render={() => (
-                        <ProjectsPage transitionState={transitionState} />
+                        <ProjectListPage transitionState={transitionState} />
                       )}
                     />
                     <Route
