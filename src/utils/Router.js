@@ -7,7 +7,6 @@ import AboutPage from "../pages/AboutPage";
 import ContactPage from "../pages/ContactPage";
 import Cursor from "../components/Cursor";
 import HomePage from "../pages/HomePage";
-import ProjectsPage from "../pages/ProjectsPage";
 
 class Router extends Component {
   constructor(props) {
